@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Covid Info</string>
+
+    <!-- welcome -->
+    <string name="wlcm_logo_name">You are not alone</string>
+    <string name="wlcm_button">Explore</string>
+    <string name="wlcm_subtitle">Thank you for the download!\nStart right getting info about Corona</string>
+</resources>
