@@ -53,12 +53,13 @@
         app:layout_constraintTop_toBottomOf="@id/tv_feel" />
 
     <LinearLayout
+        android:id="@+id/linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_callinfo">
 
         <com.google.android.material.button.MaterialButton
@@ -82,11 +83,74 @@
             android:layout_margin="24dp"
             android:layout_weight="1"
             android:background="@drawable/btn_call_bg"
+            android:backgroundTint="#FFF"
             android:text="Online appointment"
             android:textAllCaps="false"
             android:theme="@style/Online.Button"
-            android:backgroundTint="#FFF"
             app:icon="@android:drawable/sym_action_chat" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_prevention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Prevention"
+        android:textColor="#282963"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
+
+    <ImageView
+        android:id="@+id/iv_higiene"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_prevention"
+        app:srcCompat="@drawable/higiene_bar" />
+
+    <ImageButton
+        android:id="@+id/btn_symptoms"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_higiene"
+        app:srcCompat="@drawable/symptoms_btn" />
+
+    <TextView
+        android:id="@+id/tv_symptoms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="64dp"
+        android:text="What are the symptoms?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_symptoms"
+        app:layout_constraintTop_toBottomOf="@+id/iv_higiene" />
+
+    <TextView
+        android:id="@+id/tv_symptoms2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginEnd="64dp"
+        android:text="Learn more about Covid-19 symptoms."
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_symptoms"
+        app:layout_constraintTop_toBottomOf="@+id/tv_symptoms" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
