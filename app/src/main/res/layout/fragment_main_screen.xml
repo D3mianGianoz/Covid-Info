@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="330dp"
+        android:background="@drawable/header_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
+    <TextView
+        android:id="@+id/tv_covid19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="96dp"
+        android:text="Covid-19"
+        android:textColor="#FFF"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_feel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:text="Are you feeling sick?"
+        android:textColor="#FFF"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@id/tv_covid19" />
+
+    <TextView
+        android:id="@+id/tv_callinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:text="If you are feeling sick, please call Sanepid or try to book online consultation with a doctor."
+        android:textColor="#FFF"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@id/tv_feel" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/tv_callinfo">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_call"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_call_bg"
+            android:text="Call"
+            android:textAllCaps="false"
+            android:theme="@style/Call.Button"
+            app:icon="@android:drawable/stat_sys_phone_call" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_onlinehelp"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_call_bg"
+            android:text="Online appointment"
+            android:textAllCaps="false"
+            android:theme="@style/Online.Button"
+            android:backgroundTint="#FFF"
+            app:icon="@android:drawable/sym_action_chat" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="Call.Button" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/GreenButtonThemeOverlay</item>
+        <item name="strokeColor">#FFF</item>
+        <item name="strokeWidth">20dp</item>
+        <item name="backgroundTint">#3ad64f</item>
+    </style>
+
+    <style name="GreenButtonThemeOverlay">
+        <item name="colorPrimary">#FF5959</item>
+    </style>
+
+    <style name="Online.Button" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">#4C79FF</item>
+
+    </style>
+
+
+
+
+
+
 </resources>
