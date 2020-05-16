@@ -69,7 +69,7 @@
             android:layout_margin="24dp"
             android:layout_weight="1"
             android:background="@drawable/btn_call_bg"
-            android:text="Call"
+            android:text="Call "
             android:textAllCaps="false"
             android:theme="@style/Call.Button"
             app:icon="@android:drawable/stat_sys_phone_call" />
