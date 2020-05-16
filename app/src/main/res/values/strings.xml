@@ -4,5 +4,8 @@
     <!-- welcome -->
     <string name="wlcm_logo_name">You are not alone</string>
     <string name="wlcm_button">Explore</string>
-    <string name="wlcm_subtitle">Thank you for the download!\nStart right getting info about Corona</string>
+    <string name="wlcm_subtitle">Thank you for the download!\nStart right now getting info about Corona</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

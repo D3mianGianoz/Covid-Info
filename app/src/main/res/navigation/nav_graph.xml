@@ -8,5 +8,23 @@
         android:id="@+id/welcomeFragment"
         android:name="pwr.edu.covid.info.ui.WelcomeFragment"
         android:label="Welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="pwr.edu.covid.info.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_statisticFragment"
+            app:destination="@id/statisticFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="pwr.edu.covid.info.ui.stat.StatisticFragment"
+        android:label="Statistic"
+        tools:layout="@layout/fragment_statistic" />
 </navigation>

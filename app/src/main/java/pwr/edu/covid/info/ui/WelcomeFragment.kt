@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import pwr.edu.covid.info.R
 import pwr.edu.covid.info.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -20,11 +21,11 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//         Inflate the layout for this fragment
+    // Inflate the layout for this fragment
         _binding = FragmentWelcomeBinding.inflate(layoutInflater, container, false)
 
         binding.wlcmButton.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_welcomeFragment_to_homeFragment)
         }
 
         return binding.root
