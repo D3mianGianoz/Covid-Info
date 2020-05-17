@@ -1,4 +1,4 @@
-package pwr.edu.covid.info.data
+package pwr.edu.covid.info.data.statsData
 
 import com.squareup.moshi.JsonClass
 
@@ -39,6 +39,13 @@ data class AllCasesGlobal(
 )
 
 fun AllCasesGlobal.asDomainObject(): CovidGlobal {
-    return CovidGlobal(updated, cases, deaths, recovered, active, critical)
+    return CovidGlobal(
+        updated,
+        cases,
+        deaths,
+        recovered,
+        active,
+        critical
+    )
 }
 

@@ -1,6 +1,5 @@
-package pwr.edu.covid.info.NewsData
+package pwr.edu.covid.info.data.newsData
 
-import NewsEntity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

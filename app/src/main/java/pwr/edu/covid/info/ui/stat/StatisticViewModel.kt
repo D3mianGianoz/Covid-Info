@@ -7,9 +7,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
-import pwr.edu.covid.info.data.AllCasesGlobal
-import pwr.edu.covid.info.data.CovidGlobal
-import pwr.edu.covid.info.data.asDomainObject
+import pwr.edu.covid.info.data.statsData.AllCasesGlobal
+import pwr.edu.covid.info.data.statsData.CovidGlobal
+import pwr.edu.covid.info.data.statsData.asDomainObject
 import pwr.edu.covid.info.network.Network
 import pwr.edu.covid.info.network.ServiceStatus
 import timber.log.Timber
@@ -51,7 +51,8 @@ class StatisticViewModel : ViewModel() {
         get() = _global
 
     init {
-        _global.value = CovidGlobal(0, 0, 0, 0, 0, 0)
+        _global.value =
+            CovidGlobal(0, 0, 0, 0, 0, 0)
         getGlobalStatsFromNetwork()
     }
 

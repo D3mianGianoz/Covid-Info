@@ -1,4 +1,4 @@
-package pwr.edu.covid.info.data
+package pwr.edu.covid.info.data.statsData
 
 /**
  * Worldwide stats: cases, deaths, recovered, time last updated, and active cases
