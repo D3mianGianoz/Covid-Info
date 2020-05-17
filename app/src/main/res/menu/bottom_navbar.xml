@@ -11,7 +11,7 @@
         android:icon="@drawable/ic_stats"
         android:title="Statistic" />
     <item
-        android:id="@+id/news"
+        android:id="@+id/newsFragment"
         android:icon="@drawable/ic_news"
         android:title="News" />
     <item

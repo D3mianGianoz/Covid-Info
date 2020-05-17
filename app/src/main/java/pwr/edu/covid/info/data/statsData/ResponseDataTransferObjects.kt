@@ -35,6 +35,10 @@ data class AllCasesGlobal(
     val deathsPerOneMillion: Float,
     val tests: Int,
     val testsPerOneMillion: Double,
+    val population: Long,
+    val activePerOneMillion: Float,
+    val recoveredPerOneMillion: Float,
+    val criticalPerOneMillion: Float,
     val affectedCountries: Int
 )
 

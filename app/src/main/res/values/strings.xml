@@ -8,4 +8,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_stats">Live Statistics</string>
+    <string name="label_affected_stats">Affected</string>
+    <string name="label_death_stats">Death</string>
+    <string name="label_recovered_stats">Recovered</string>
+    <string name="label_active_stats">Active</string>
+    <string name="label_critical_stats">Critical</string>
 </resources>

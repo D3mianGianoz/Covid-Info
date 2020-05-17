@@ -51,9 +51,9 @@ class StatisticViewModel : ViewModel() {
         get() = _global
 
     init {
+        getGlobalStatsFromNetwork()
         _global.value =
             CovidGlobal(0, 0, 0, 0, 0, 0)
-        getGlobalStatsFromNetwork()
     }
 
     private fun getGlobalStatsFromNetwork() = viewModelScope.launch {
@@ -80,7 +80,7 @@ class StatisticViewModel : ViewModel() {
         } catch (ex: Exception) {
             when (ex) {
                 is NullPointerException -> Timber.e("Error during data conversion ${ex.message}")
-                is RuntimeException -> Timber.e("Generic error ${ex.message}")
+                else -> Timber.e("Generic error ${ex.message}")
             }
 
             //Stop Spinner

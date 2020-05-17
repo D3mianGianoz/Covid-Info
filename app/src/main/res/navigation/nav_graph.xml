@@ -26,5 +26,14 @@
         android:id="@+id/statisticFragment"
         android:name="pwr.edu.covid.info.ui.stat.StatisticFragment"
         android:label="Statistic"
-        tools:layout="@layout/fragment_statistic" />
+        tools:layout="@layout/fragment_statistic" >
+        <action
+            android:id="@+id/action_statisticFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="pwr.edu.covid.info.ui.news.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/news_fragment" />
 </navigation>
