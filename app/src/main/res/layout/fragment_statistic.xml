@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="@+id/iv_affected" />
 
     <TextView
-        android:id="@+id/txt_num_affected"
+        android:id="@+id/text_num_affected"
         style="@style/bigNumber_stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toTopOf="@+id/iv_death" />
 
     <TextView
-        android:id="@+id/txt_num_death"
+        android:id="@+id/text_num_death"
         style="@style/bigNumber_stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -16,6 +16,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
  */
 
 private const val baseUrl = "https://corona-virus-stats.herokuapp.com/api/v1/"
+private const val novelUrl = "https://corona.lmao.ninja/v2/"
 
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -44,17 +45,26 @@ private val client = OkHttpClient()
  * Main entry point for network access without authentication
  */
 object Network {
-
     // Configure retrofit to parse JSON and use coroutines
     private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl(baseUrl)
+        .baseUrl(novelUrl)
         .client(client)
-        .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(converterFactory)
         .addCallAdapterFactory(callAdapterFactory)
         .build()
 
+    //.addConverterFactory(ScalarsConverterFactory.create())
+
     val statisticInterface: StatisticInterface =
         retrofit.create(StatisticInterface::class.java)
 
+    val covidInterface: NovelCOVIDInterface =
+        retrofit.create(NovelCOVIDInterface::class.java)
+
+}
+
+enum class ServiceStatus {
+    WAITING,
+    DONE,
+    ERROR
 }
