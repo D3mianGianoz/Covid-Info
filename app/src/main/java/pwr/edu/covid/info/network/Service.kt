@@ -18,7 +18,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 private const val baseUrl = "https://corona-virus-stats.herokuapp.com/api/v1/"
 private const val novelUrl = "https://corona.lmao.ninja/v2/"
-private const val newsUrl = "https://api.smartable.ai/coronavirus/news/global"
+private const val newsUrl = "https://api.smartable.ai/coronavirus/news/global/"
 
 
 /**
