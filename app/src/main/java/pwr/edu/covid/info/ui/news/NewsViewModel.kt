@@ -9,7 +9,6 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import pwr.edu.covid.info.data.newsData.NewsApiResponse
 import pwr.edu.covid.info.network.Network
-import pwr.edu.covid.info.network.NewsNetwork
 import pwr.edu.covid.info.network.ServiceStatus
 import timber.log.Timber
 
