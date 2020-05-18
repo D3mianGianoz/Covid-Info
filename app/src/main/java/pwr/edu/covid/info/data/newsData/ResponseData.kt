@@ -42,9 +42,9 @@ data class NewsEntity(
 
 @JsonClass(generateAdapter = true)
 data class NewsApiResponse(
-    val location: Location,
-    val news: List<NewsEntity>,
-    val updatedDateTime: String
+    val location: Location?,
+    val news: List<NewsEntity>?,
+    val updatedDateTime: String?
 )
 
 @JsonClass(generateAdapter = true)
