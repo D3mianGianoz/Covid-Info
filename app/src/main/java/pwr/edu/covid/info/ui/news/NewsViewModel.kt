@@ -1,5 +1,6 @@
 package pwr.edu.covid.info.ui.news
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import pwr.edu.covid.info.data.newsData.NewsApiResponse
+import pwr.edu.covid.info.data.newsData.NewsEntity
 import pwr.edu.covid.info.network.Network
 import pwr.edu.covid.info.network.ServiceStatus
 import timber.log.Timber
@@ -67,6 +69,11 @@ class NewsViewModel : ViewModel() {
 
                 Timber.e("New Global news: ${_global.value}")
 
+                var newsArray = global.value?.news
+                Log.wtf(newsArray.toString(), "lista")
+
+
+
                 // Success
                 networkOperationSuccess()
             } else {
@@ -85,6 +92,8 @@ class NewsViewModel : ViewModel() {
             networkOperationError()
         }
     }
+
+
 
     /**
      * When we clear the viewModel we need also to cancel the Job and not let it pending
