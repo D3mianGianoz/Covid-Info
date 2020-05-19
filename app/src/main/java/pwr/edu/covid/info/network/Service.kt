@@ -3,6 +3,7 @@ package pwr.edu.covid.info.network
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,6 +18,8 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 private const val baseUrl = "https://corona-virus-stats.herokuapp.com/api/v1/"
 private const val novelUrl = "https://corona.lmao.ninja/v2/"
+private const val newsUrl = "https://api.smartable.ai/coronavirus/news/global/"
+
 
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -41,6 +44,15 @@ private val client = OkHttpClient()
     .addInterceptor(loggingInterceptor)
     .build()
 
+private val newsClient = OkHttpClient()
+    .newBuilder()
+    .addInterceptor(Interceptor { chain ->
+        val builder = chain.request().newBuilder()
+        builder.header("Subscription-Key", "f3a9a5a176094d65b10f54b92b35ef87")
+        return@Interceptor chain.proceed(builder.build())
+    })
+    .build()
+
 /**
  * Main entry point for network access without authentication
  */
@@ -61,7 +73,18 @@ object Network {
     val covidInterface: NovelCOVIDInterface =
         retrofit.create(NovelCOVIDInterface::class.java)
 
+    private val newsRetrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(newsUrl)
+        .client(newsClient)
+        .addConverterFactory(converterFactory)
+        .addCallAdapterFactory(callAdapterFactory)
+        .build()
+
+    val newsInterface: NewsInterface =
+        newsRetrofit.create(NewsInterface::class.java)
+
 }
+
 
 enum class ServiceStatus {
     WAITING,
