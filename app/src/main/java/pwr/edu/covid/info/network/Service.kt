@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -18,7 +19,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 private const val baseUrl = "https://corona-virus-stats.herokuapp.com/api/v1/"
 private const val novelUrl = "https://corona.lmao.ninja/v2/"
-private const val newsUrl = "https://api.smartable.ai/coronavirus/news/global/"
+private const val newsUrl = "https://api.smartable.ai/coronavirus/"
 
 
 /**
@@ -48,9 +49,10 @@ private val newsClient = OkHttpClient()
     .newBuilder()
     .addInterceptor(Interceptor { chain ->
         val builder = chain.request().newBuilder()
-        builder.header("Subscription-Key", "f3a9a5a176094d65b10f54b92b35ef87")
+        builder.header("Subscription-Key", "f3a9a5a176094d65b10f54b92b35ef87") //3009d4ccc29e4808af1ccc25c69b4d5d
         return@Interceptor chain.proceed(builder.build())
     })
+    .addInterceptor(loggingInterceptor)
     .build()
 
 /**
@@ -82,7 +84,6 @@ object Network {
 
     val newsInterface: NewsInterface =
         newsRetrofit.create(NewsInterface::class.java)
-
 }
 
 

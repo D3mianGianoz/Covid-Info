@@ -10,6 +10,8 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import pwr.edu.covid.info.data.newsData.NewsApiResponse
 import pwr.edu.covid.info.data.newsData.NewsEntity
+import pwr.edu.covid.info.data.newsData.NewsItem
+import pwr.edu.covid.info.data.newsData.asDomainObject
 import pwr.edu.covid.info.network.Network
 import pwr.edu.covid.info.network.ServiceStatus
 import timber.log.Timber
@@ -50,10 +52,24 @@ class NewsViewModel : ViewModel() {
     val global: LiveData<NewsApiResponse>
         get() = _global
 
+    /**
+     * A playlist of news that can be shown on the screen. This is private to avoid exposing a
+     * way to set this value to observers.
+     */
+    private val _newsList = MutableLiveData<List<NewsItem>>()
+
+    /**
+     * A playlist of news that can be shown on the screen. Views should use this to get access
+     * to the data.
+     */
+    val newsList: LiveData<List<NewsItem>>
+        get() = _newsList
+
+
     init {
         getGlobalNewsFromNetwork()
         _global.value =
-            NewsApiResponse(null, null, null)
+            NewsApiResponse(null, ArrayList(), null)
     }
 
     private fun getGlobalNewsFromNetwork() = viewModelScope.launch {
@@ -67,12 +83,12 @@ class NewsViewModel : ViewModel() {
                 // Store result
                 _global.postValue(body)
 
-                Timber.e("New Global news: ${_global.value}")
+                Timber.d("New Global news: ${_global.value}")
 
-                var newsArray = global.value?.news
-                Log.wtf(newsArray.toString(), "lista")
+                val news: List<NewsItem> = global.value!!.news?.asDomainObject()!!
 
-
+                _newsList.postValue(news)
+                Timber.i("lista: $newsList")
 
                 // Success
                 networkOperationSuccess()
@@ -92,7 +108,6 @@ class NewsViewModel : ViewModel() {
             networkOperationError()
         }
     }
-
 
 
     /**
