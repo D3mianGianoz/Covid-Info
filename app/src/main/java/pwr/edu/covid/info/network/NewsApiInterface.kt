@@ -8,11 +8,10 @@ import retrofit2.http.Query
 import java.util.*
 
 
-
 /**
  * All cases updated every 10 minutes
  */
 interface NewsInterface {
-    @GET("all")
+    @GET("news/global")
     suspend fun getNews(): Response<NewsApiResponse>
 }

@@ -16,7 +16,6 @@ import pwr.edu.covid.info.network.ServiceStatus
 class StatisticFragment : Fragment() {
 
     private lateinit var viewModel: StatisticViewModel
-
     private var _binding: FragmentStatisticBinding? = null
 
     // This property is only valid between onCreateView and

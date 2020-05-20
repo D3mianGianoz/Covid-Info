@@ -35,5 +35,5 @@
         android:id="@+id/newsFragment"
         android:name="pwr.edu.covid.info.ui.news.NewsFragment"
         android:label="News"
-        tools:layout="@layout/news_fragment" />
+        tools:layout="@layout/fragment_news" />
 </navigation>
