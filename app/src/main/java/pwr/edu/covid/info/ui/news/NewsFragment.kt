@@ -1,5 +1,7 @@
 package pwr.edu.covid.info.ui.news
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +10,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import pwr.edu.covid.info.data.newsData.NewsAdapter
 import pwr.edu.covid.info.data.newsData.NewsItem
@@ -33,8 +34,11 @@ class NewsFragment : Fragment() {
         _binding = FragmentNewsBinding.inflate(layoutInflater, container, false)
 
         //On click on single item (View Lesson 7)
-        viewModelAdapter = NewsAdapter(NewsListener {
-            Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show()
+        viewModelAdapter = NewsAdapter(NewsListener { news: NewsItem ->
+                val url = news.webUrl
+                val i = Intent(Intent.ACTION_VIEW)
+                i.data = Uri.parse(url)
+                startActivity(i)
         })
 
         // Setting observability of the data

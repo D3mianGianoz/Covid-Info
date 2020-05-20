@@ -19,7 +19,8 @@
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> clickListener.onClick(newsItem)}">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -31,8 +32,12 @@
                     android:id="@+id/imageView"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
+                    android:adjustViewBounds="true"
                     android:contentDescription="@string/app_name"
+                    android:cropToPadding="true"
+                    android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:imageUrl="@{newsItem.image.url}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_launcher_background" />

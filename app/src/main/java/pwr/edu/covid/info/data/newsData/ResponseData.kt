@@ -44,7 +44,7 @@ fun List<NewsEntity>.asDomainObject(): List<NewsItem>{
     return map {
         NewsItem(
             title = it.title,
-            image = Image(null, null, "ciao", "Url", 3),
+            image = it.images?.get(0),
             description = it.topics[0],
             webUrl = it.webUrl
         )

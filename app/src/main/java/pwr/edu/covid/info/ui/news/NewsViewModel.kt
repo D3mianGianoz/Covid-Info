@@ -88,7 +88,7 @@ class NewsViewModel : ViewModel() {
                 val news: List<NewsItem> = global.value!!.news?.asDomainObject()!!
 
                 _newsList.postValue(news)
-                Timber.i("lista: $newsList")
+                Timber.d("lista: $newsList")
 
                 // Success
                 networkOperationSuccess()
