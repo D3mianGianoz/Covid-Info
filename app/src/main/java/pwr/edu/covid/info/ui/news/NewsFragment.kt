@@ -69,11 +69,14 @@ class NewsFragment : Fragment() {
             when (it) {
                 ServiceStatus.DONE -> {
                     Toast.makeText(context, "Done loading data", Toast.LENGTH_SHORT).show()
+                    binding.loadingSpinner.visibility = View.GONE
                 }
                 ServiceStatus.WAITING -> {
+                    binding.loadingSpinner.visibility = View.VISIBLE
                 }
                 ServiceStatus.ERROR -> {
                     Toast.makeText(context, "Error loading data", Toast.LENGTH_SHORT).show()
+                    binding.loadingSpinner.visibility = View.GONE
                 }
                 else -> {
                 }

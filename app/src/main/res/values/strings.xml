@@ -4,16 +4,9 @@
     <!-- welcome -->
     <string name="wlcm_logo_name">You are not alone</string>
     <string name="wlcm_button">Explore</string>
-    <string name="wlcm_subtitle">Thank you for the download!\nStart right now getting info about Corona Virus</string>
+    <string name="wlcm_subtitle">Thank you for the download!\nStart right now getting\n info about Corona Virus</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_stats">Live Statistics</string>
-    <string name="label_affected_stats">Affected</string>
-    <string name="label_death_stats">Death</string>
-    <string name="label_recovered_stats">Recovered</string>
-    <string name="label_active_stats">Active</string>
-    <string name="label_critical_stats">Critical</string>
+    <!--   home -->
     <string name="covid_19">Covid-19</string>
     <string name="feeling_sick">Are you feeling sick?</string>
     <string name="please_call">If you are feeling sick, please call Covid Hotline or try to book online consultation with a doctor.</string>
@@ -24,11 +17,21 @@
     <string name="symptoms_button">symptoms button</string>
     <string name="symptoms_question">What are the symptoms?</string>
     <string name="symptoms_learn">Learn more about Covid-19 symptoms.</string>
+
+    <!-- statistic -->
+    <string name="title_stats">Live Statistics</string>
+    <string name="label_affected_stats">Affected</string>
+    <string name="label_death_stats">Death</string>
+    <string name="label_recovered_stats">Recovered</string>
+    <string name="label_active_stats">Active</string>
+    <string name="label_critical_stats">Critical</string>
+
+    <!-- news -->
     <string name="desc">News description</string>
     <string name="news_title">News title</string>
 
     <string-array name="countries_array">
-        <item>USA</item>
+        <item>USA 🇺🇸</item>
         <item>UK</item>
         <item>Spain</item>
         <item>France</item>
