@@ -2,12 +2,14 @@
 
 ![Gif](/recGif.gif)
 # Description
-Android application in the topic of current global pandemic of COVID-19 disease. 
+Android application in the topic of current global pandemic of COVID-19 disease.
+Live statistics of Global and Country situation
 
 # Technology
   - Kotlin + MVVM
   - Retrofit with coroutines for API handling
   - View binding
+  - Data binding
 
 # Functionalities:
   - Buttons for Quick call for help in case of symptoms and booking online appoitment
