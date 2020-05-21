@@ -16,6 +16,24 @@
         android:background="@drawable/home_header_bg"
         tools:context=".ui.stat.StatisticFragment">
 
+        <TextView
+            android:id="@+id/txt_selected_country"
+            style="@style/label_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.countrySelected}"
+            android:textSize="18sp"
+            app:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:gravity="center_horizontal|top|center_vertical"
+            android:scrollHorizontally="true"
+            app:layout_constraintBottom_toTopOf="@+id/iv_affected"
+            app:layout_constraintEnd_toStartOf="@+id/bt_change_Country"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/statistics"
+            app:layout_constraintTop_toBottomOf="@+id/statistics"
+            tools:text="Global" />
+
         <ProgressBar
             android:id="@+id/loading_spinner"
             android:layout_width="150dp"
@@ -213,5 +231,18 @@
             app:layout_constraintStart_toStartOf="@+id/iv_critical"
             app:layout_constraintTop_toBottomOf="@+id/label_critical"
             tools:text="100,000" />
+
+        <Button
+            android:id="@+id/bt_change_Country"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_btn_call_bg"
+            android:text="Change Country"
+            android:textAllCaps="false"
+            android:theme="@style/Call.Button"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_selected_country"
+            app:layout_constraintEnd_toEndOf="@+id/iv_critical"
+            app:layout_constraintTop_toTopOf="@+id/txt_selected_country" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

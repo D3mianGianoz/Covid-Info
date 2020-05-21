@@ -3,11 +3,13 @@ package pwr.edu.covid.info.ui.stat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.mukesh.countrypicker.Country
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import pwr.edu.covid.info.data.statsData.AllCasesGlobal
+import pwr.edu.covid.info.data.statsData.CountryCases
 import pwr.edu.covid.info.data.statsData.CovidGlobal
 import pwr.edu.covid.info.data.statsData.asDomainObject
 import pwr.edu.covid.info.network.Network
@@ -50,10 +52,15 @@ class StatisticViewModel : ViewModel() {
     val global: LiveData<CovidGlobal>
         get() = _global
 
+    private val _countrySelected = MutableLiveData<String>()
+    val countrySelected: LiveData<String>
+        get() = _countrySelected
+
     init {
         getGlobalStatsFromNetwork()
         _global.value =
             CovidGlobal(0, 0, 0, 0, 0, 0)
+        _countrySelected.value = "Global"
     }
 
     private fun getGlobalStatsFromNetwork() = viewModelScope.launch {
@@ -63,6 +70,47 @@ class StatisticViewModel : ViewModel() {
 
             if (dataFromServer.isSuccessful) {
                 val body: AllCasesGlobal = dataFromServer.body()!!
+
+                // Store result
+                _global.postValue(body.asDomainObject())
+
+                Timber.e("New Global stats: ${_global.value}")
+
+                // Success
+                networkOperationSuccess()
+            } else {
+                Timber.e("Error in the request: ${dataFromServer.errorBody().toString()}")
+
+                //Stop Spinner
+                networkOperationError()
+            }
+        } catch (ex: Exception) {
+            when (ex) {
+                is NullPointerException -> Timber.e("Error during data conversion ${ex.message}")
+                else -> Timber.e("Generic error ${ex.message}")
+            }
+
+            //Stop Spinner
+            networkOperationError()
+        }
+    }
+
+    fun onChangeCountry(country: Country) = viewModelScope.launch {
+        _networkOperationStatus.postValue(ServiceStatus.WAITING)
+
+        // Update the UI
+        _countrySelected.postValue(country.name)
+
+        try {
+            val dataFromServer =
+                Network.covidInterface.getSpecifCountry(
+                    country = country.code,
+                    yesterday = false,
+                    strict = true
+                )
+
+            if (dataFromServer.isSuccessful) {
+                val body: CountryCases = dataFromServer.body()!!
 
                 // Store result
                 _global.postValue(body.asDomainObject())
