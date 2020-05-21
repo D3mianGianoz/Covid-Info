@@ -238,7 +238,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/home_btn_call_bg"
-            android:text="Change Country"
+            android:text="@string/change_country"
             android:textAllCaps="false"
             android:theme="@style/Call.Button"
             app:layout_constraintBottom_toBottomOf="@+id/txt_selected_country"

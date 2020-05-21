@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.InfoFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@string/self_description"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed est semper, facilisis ex eget, placerat massa. Quisque vulputate est quam. Nunc quis tristique magna. Duis dictum metus nunc, ut scelerisque augue pellentesque ut. Nullam dapibus tempus imperdiet. Maecenas varius dolor porttitor, hendrerit justo vitae, tempus est. Mauris vel vehicula libero, ac aliquam magna. Praesent a elit sagittis sem mollis imperdiet eget vitae purus.  Vivamus faucibus efficitur mi, eget sollicitudin augue vehicula volutpat. Vivamus non posuere orci. Donec at tortor metus. Sed semper lacinia augue, quis luctus sem hendrerit et. Cras ac sapien et quam venenatis tempus id a elit. Maecenas odio ex, vehicula in posuere nec, feugiat et est. Nunc non ex porta, ultrices nisi at, imperdiet dolor. Donec nec erat eget diam fringilla accumsan. Mauris aliquam diam et erat pulvinar congue. Integer consectetur feugiat lectus, sit amet efficitur nisl maximus nec. Integer euismod finibus ipsum, vitae congue libero porttitor ut. In mattis, libero vel euismod auctor, magna metus iaculis ligula, a mollis enim ante nec urna. Nam id est libero. Proin eget diam commodo, viverra ex non, vulputate nulla. Sed commodo imperdiet auctor. Cras pulvinar, tortor ac eleifend euismod, arcu purus bibendum arcu, at porta tellus arcu vulputate leo.  Suspendisse sit amet tellus luctus dolor dictum sollicitudin ut a urna. Donec ac porta tortor. Quisque dictum vehicula felis, a rutrum nulla lobortis in. Morbi faucibus condimentum leo, id rutrum lacus. Proin sit amet vestibulum diam, id porttitor ipsum. Nam ultrices fringilla erat, vitae gravida urna tempor eget. Maecenas augue turpis, tristique in consequat rhoncus, hendrerit egestas est. Aliquam erat volutpat.  Aliquam erat volutpat. Nulla at vestibulum nunc. Integer iaculis facilisis rhoncus. Phasellus fringilla mattis mauris. In non pellentesque nunc. Phasellus congue quam nisl, eget euismod magna posuere a. Morbi purus dui, ultricies sed dui sed, feugiat consectetur nisi. Proin auctor consequat scelerisque.  Morbi ultrices arcu vel tempor mollis. Cras egestas porta vulputate. Duis interdum lacinia lorem et accumsan. Fusce ut turpis pharetra, gravida enim non, sollicitudin ante. Proin sit amet dui nec nulla pulvinar interdum. Vivamus mollis viverra ligula quis aliquam. Quisque ut leo ultricies, ornare ex in, rutrum felis. In luctus odio enim, sed lacinia felis bibendum nec. Vestibulum nibh nulla, lacinia ac finibus in, condimentum vitae nunc." />
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_profile"
+        tools:src="@tools:sample/avatars" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
