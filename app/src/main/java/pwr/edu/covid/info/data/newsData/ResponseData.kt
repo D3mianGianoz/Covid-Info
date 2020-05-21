@@ -25,7 +25,7 @@ data class NewsEntity(
     val ampWebUrl: Any?,
     val categories: List<String>?,
     val cdnAmpWebUrl: Any?,
-    val excerpt: String?,
+    val excerpt: String,
     val heat: Int?,
     val images: List<Image?>?,
     val locale: String?,
@@ -45,7 +45,7 @@ fun List<NewsEntity>.asDomainObject(): List<NewsItem>{
         NewsItem(
             title = it.title,
             image = it.images?.get(0),
-            description = it.topics[0],
+            description = it.excerpt,
             webUrl = it.webUrl
         )
     }
