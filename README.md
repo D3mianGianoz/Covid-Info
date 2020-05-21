@@ -9,7 +9,7 @@ Android application in the topic of current global pandemic of COVID-19 disease.
   - Retrofit with coroutines for API handling
   - View binding
 
-#Functionalities:
+# Functionalities:
   - Buttons for Quick call for help in case of symptoms and booking online appoitment
   - Redirection for exact symptoms description
   - Displaying statistics about disease cases (global or for specific country)
