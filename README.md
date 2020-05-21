@@ -1,6 +1,6 @@
 # Covid Info
 
-[![N|Solid](<<gif>>)]()
+![Gif](/recGif.gif)
 # Description
 Android application in the topic of current global pandemic of COVID-19 disease. 
 
