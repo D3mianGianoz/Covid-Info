@@ -43,7 +43,7 @@ class NewsAdapter(private val clickListener: NewsListener) :
         fun bind(newsObj: NewsItem, clickListener: NewsListener) {
             binding.newsItem = newsObj
             binding.clickListener = clickListener
-            binding.executePendingBindings()
+//            binding.executePendingBindings()
         }
     }
 }

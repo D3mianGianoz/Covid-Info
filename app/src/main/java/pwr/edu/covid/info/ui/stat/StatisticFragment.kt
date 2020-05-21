@@ -52,21 +52,21 @@ class StatisticFragment : Fragment() {
         // Current binding is done in the xml
         binding.viewModel = viewModel
 
-        // It is just a test
-        viewModel.networkOperationStatus.observe(viewLifecycleOwner, Observer {
-            when (it) {
-                ServiceStatus.DONE -> {
-                    Snackbar.make(requireView(), "Done loading data", Snackbar.LENGTH_SHORT).show()
-                }
-                ServiceStatus.WAITING -> {
-                }
-                ServiceStatus.ERROR -> {
-                    Snackbar.make(requireView(), "Error loading data", Snackbar.LENGTH_SHORT).show()
-                }
-                else -> {
-                }
-            }
-        })
+        // It is just a test TODO remove
+//        viewModel.networkOperationStatus.observe(viewLifecycleOwner, Observer {
+//            when (it) {
+//                ServiceStatus.DONE -> {
+////                    Snackbar.make(requireView(), "Done loading data", Snackbar.LENGTH_SHORT).show()
+//                }
+//                ServiceStatus.WAITING -> {
+//                }
+//                ServiceStatus.ERROR -> {
+////                    Snackbar.make(requireView(), "Error loading data", Snackbar.LENGTH_SHORT).show()
+//                }
+//                else -> {
+//                }
+//            }
+//        })
     }
 
     override fun onDestroyView() {

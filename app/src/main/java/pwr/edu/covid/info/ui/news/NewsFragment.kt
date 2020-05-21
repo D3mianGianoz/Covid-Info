@@ -68,7 +68,7 @@ class NewsFragment : Fragment() {
         viewModel.networkOperationStatus.observe(viewLifecycleOwner, Observer {
             when (it) {
                 ServiceStatus.DONE -> {
-                    Toast.makeText(context, "Done loading data", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, "Done loading data", Toast.LENGTH_SHORT).show()
                     binding.loadingSpinner.visibility = View.GONE
                 }
                 ServiceStatus.WAITING -> {
@@ -77,8 +77,6 @@ class NewsFragment : Fragment() {
                 ServiceStatus.ERROR -> {
                     Toast.makeText(context, "Error loading data", Toast.LENGTH_SHORT).show()
                     binding.loadingSpinner.visibility = View.GONE
-                }
-                else -> {
                 }
             }
         })
